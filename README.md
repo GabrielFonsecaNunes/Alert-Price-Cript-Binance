@@ -4,7 +4,7 @@ RSI and Keltner Channel Crypto Trading Bot Alert
 
 ## Description
 
-This project implements a trading bot that monitors various cryptocurrency pairs on Binance and sends alerts to a Discord webhook when certain trading conditions are met. The bot uses the Relative Strength Index (RSI) and the Keltner Channel to identify buy and sell opportunities.
+This project implements a bot alert for trading that monitors various cryptocurrency pairs on Binance and sends alerts to a Discord webhook when certain trading conditions are met. The bot uses the Relative Strength Index (RSI) and the Keltner Channel to identify buy and sell opportunities.
 
 ## Features
 
