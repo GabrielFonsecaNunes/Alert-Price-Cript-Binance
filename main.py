@@ -17,7 +17,7 @@ def send_alert(symbol, price, ifr_value, ifr_trend, price_trend, ifr, interval, 
     Envia um alerta para o webhook do Discord se o IFR for menor que um limite específico.
     """
     if ifr_value < ifr:  # Ajuste o limite de acordo com suas necessidades
-        URL_WEBHOOK = config("URL_WEBHOOK")
+        URL_WEBHOOK = os.environ["URL_WEBHOOK"]
         content = (f"Moeda: {symbol}\nPreço: {price}\nIFR: {ifr_value}\nTendência IFR: {ifr_trend}\n"
                    f"Tendência Preço: {price_trend}\nIntervalo: {interval}\n"
                    f"Preço Alvo Compra: ${keltner_lower:.3f}\nPreço Alvo Venda: ${keltner_upper:.3f}\n")
@@ -171,9 +171,9 @@ def main():
 
     while True:
         for symbol in symbols:
-            ifr_value, ifr_trend, keltner_lower, keltner_upper = check_ifr(symbol, interval_15min)
+            ifr_value, ifr_trend, keltner_lower, keltner_upper = check_ifr(symbol, interval_1h)
             if ifr_value is not None and ifr_value != False:
-                price_trend = check_price_trend(symbol, interval_15min)
+                price_trend = check_price_trend(symbol, interval_1h)
                 if price_trend is not None:
                     # Obter o preço atual
                     client = Client(api_key=os.environ["API_KEY_BINANCE"], api_secret=os.environ["API_SECRET_BINANCE"])
