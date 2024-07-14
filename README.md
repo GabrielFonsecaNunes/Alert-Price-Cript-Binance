@@ -28,7 +28,7 @@ This project implements a trading bot that monitors various cryptocurrency pairs
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/rsi-keltner-bot.git
+   git clone https://github.com/GabrielFonsecaNunes/Alert-Price-Cript-Binance.git
    cd rsi-keltner-bot
    ```
 
